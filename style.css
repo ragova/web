@@ -1,0 +1,218 @@
+body {
+    margin: 0;
+    background-color: black;
+    font-family: 'Montserrat', sans-serif;
+    color: white;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    user-select: none;
+}
+
+.title-triangle-wrapper {
+    position: relative;
+    width: 100%;
+}
+
+h3 {
+    position: absolute;
+    left: 80%;
+    top: -15vh;
+    font-size: 1.5vw;
+    white-space: nowrap;
+}
+
+.triangle-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.triangle-wrapper {
+    position: absolute;
+    left: calc(50% - 7.5vw);
+    top: 50%;
+    width: 15vw;
+    height: 15vw;
+}
+
+.triangle.one {
+    position: absolute;
+    left: -25%;
+    top: -32%;
+    transform: rotate(180deg);
+    width: 100%;
+    height: 100%;
+}
+
+.triangle.two {
+    position: absolute;
+    top: 32%;
+    left: 25%;
+    width: 100%;
+    height: 100%;
+    background: white;
+    clip-path: polygon(0 0, 0 100%, 100% 100%);
+}
+
+.site-content-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    text-align: center;
+}
+
+.site-title {
+    font-size: 12vw;
+    margin: 0;
+    line-height: 1;
+    display: inline-block;
+}
+
+.slogan {
+    margin: 0;
+    font-size: 5.5vw;
+    transform: translateY(-0.4em); 
+    white-space: nowrap;
+    mix-blend-mode: difference; 
+}
+
+.body-wrapper { 
+    position: absolute; 
+    top: 65%;
+    left: 50%; 
+    transform: translateX(-50%); 
+    text-align: center; 
+    z-index: 2; 
+    width: 30%; 
+}
+
+#subscribeForm {
+    height: 6vh;
+    width: 100%;
+    margin-top: 2vh;
+    display: flex;
+    border: 0.1vw solid rgba(255, 255, 255, 0.25);
+    background: black;
+    justify-content: center;
+    align-items: center;
+    z-index: 3;
+}
+#subscribeForm:focus-within {
+    border-color: white;
+}
+
+#subscribeForm input {
+    flex: 1;
+    min-width: 0;
+    border: none;
+    background: transparent;
+    color: white;
+    outline: none;
+}
+
+#subscribeForm input::placeholder {
+    color: rgba(255, 255, 255, 0.5);
+}
+
+#subscribeForm button {
+    height: 100%;
+    border: none;
+    background: white;
+    color: black;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+#subscribeForm input, #subscribeForm button {
+    font-size: 1.2vw;
+    padding: 0.5vw 2vh;
+}
+
+#subscribeForm button:hover {
+    background: black;
+    color: white;
+}
+
+@keyframes jiggle {
+    0% { transform: translateX(0); }
+    25% { transform: translateX(-1vw); }
+    50% { transform: translateX(1vw); }
+    75% { transform: translateX(-1vw); }
+    100% { transform: translateX(0); }
+}
+
+.jiggle {
+    animation: jiggle 0.4s ease;
+}
+
+#subscribeForm .checkmark-overlay, .overlay {
+    position: absolute;
+    width: 100%;
+    height: 6vh;
+    background: white;
+    color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: 10;
+}
+
+#subscribeForm .overlay .spinner {
+    width: 1vw;
+    height: 1vw;
+    border-radius: 5vh;
+    border: 0.5vh solid rgba(0,0,0,0.2);
+    border-top-color: black;
+    animation: spin 0.6s linear infinite;
+    z-index: 15;
+    display: none;
+}
+
+#subscribeForm .overlay .checkmark {
+    display: none;
+    font-size: 2vw;
+    z-index: 20;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+#links {
+    margin-top: 1.5vw;
+    font-size: 1.5vw;
+}
+
+#links a {
+    position: relative;
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+#links a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -0.5vw;
+    width: 100%;
+    height: 0.1vw;
+    background: white;
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.3s ease;
+}
+
+#links a:hover::after {
+    transform: scaleX(1);
+    transform-origin: left;
+}
