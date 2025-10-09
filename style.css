@@ -10,6 +10,11 @@ body {
     user-select: none;
 }
 
+.scaler {
+    /* transform-origin: top center; */
+    transition: transform 0.3s ease;
+}
+
 .title-triangle-wrapper {
     position: relative;
     width: 100%;
@@ -80,22 +85,13 @@ h3 {
     mix-blend-mode: difference; 
 }
 
-.body-wrapper { 
-    position: absolute; 
-    top: 64%;
-    left: 50%; 
-    transform: translateX(-50%); 
+#links {
+    position: relative;
+    transform: translateY(-1em); 
     text-align: center; 
     z-index: 2; 
     width: 30%; 
     mix-blend-mode: difference; 
-}
-
-@keyframes spin {
-    to { transform: rotate(360deg); }
-}
-
-#links {
     font-size: 1.5vw;
 }
 
