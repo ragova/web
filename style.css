@@ -10,26 +10,25 @@ body {
     user-select: none;
 }
 
-.scaler {
-    /* transform-origin: top center; */
-    transition: transform 0.3s ease;
-}
-
 .title-triangle-wrapper {
     position: relative;
     width: 100%;
 }
 
 h3 {
-    position: absolute;
-    left: 80%;
-    top: -15vh;
+    position: relative;
+    transform: translateY(-10em); 
+    transform: translateX(37em); 
+    width: 30%;
+    /* left: 80%; */
+    /* top: -15vh; */
     font-size: 1.5vw;
     white-space: nowrap;
 }
 
 .triangle-container {
     position: relative;
+    /* height: 100vh; */
     width: 100%;
     height: 100%;
 }
