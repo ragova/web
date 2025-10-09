@@ -57,11 +57,11 @@ html, body {
   }
 }
 
-/* @media (max-width: 380px) {
+@media (max-width: 380px) {
   .landing {
     transform: scale(1.6);
   }
-} */
+}
 
 
 .title-triangle-wrapper {
