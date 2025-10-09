@@ -10,6 +10,39 @@ body {
     user-select: none;
 }
 
+.scaler {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.landing {
+    transform-origin: center;
+    transition: transform 0.3s ease;
+}
+
+/* Slightly zoom in on smaller screens to fill more horizontal space */
+@media (max-width: 900px) {
+  .landing {
+    transform: scale(1.15);
+  }
+}
+
+@media (max-width: 700px) {
+  .landing {
+    transform: scale(1.25);
+  }
+}
+
+@media (max-width: 500px) {
+  .landing {
+    transform: scale(1.35);
+  }
+}
+
 .title-triangle-wrapper {
     position: relative;
     width: 100%;
@@ -20,8 +53,6 @@ h3 {
     transform: translateY(-10em); 
     transform: translateX(37em); 
     width: 30%;
-    /* left: 80%; */
-    /* top: -15vh; */
     font-size: 1.5vw;
     white-space: nowrap;
 }
